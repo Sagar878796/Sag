@@ -24,11 +24,11 @@ jobs:
       - name: Deploy Worker
         run: |
           wrangler deploy \
-          --var HOST:${{ http://4k.spicetv.cc/stalker_portal/ }} \
-          --var MAC:${{ 00:1A:79:00:2C:D8 }} \
-          --var SERIAL:${{ 61A63207AA03F}} \
-          --var DEVICE1:${{ 061A842DFD8AA25AA9184BAB968565D2E8831804C89956DA707F8396F7D4BBDB }} \
-          --var DEVICE2:${{ 061A842DFD8AA25AA9184BAB968565D2E8831804C89956DA707F8396F7D4BBDB }}
+          --var HOST:${{ secrets.HOST }} \
+          --var MAC:${{ secrets.MAC }} \
+          --var SERIAL:${{ secrets.SERIAL }} \
+          --var DEVICE1:${{ secrets.DEVICE1 }} \
+          --var DEVICE2:${{ secrets.DEVICE2 }}
         env:
-          CLOUDFLARE_API_TOKEN: ${{cfut_5Ky25xecppg4hCr7YvisrSM0IATsI7MlFtJgeT9k374a788b }}
-          CLOUDFLARE_ACCOUNT_ID: ${{ 319df34817fc10295b4eeabb4a5f4e8d }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
